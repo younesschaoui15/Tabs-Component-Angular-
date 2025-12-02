@@ -1,0 +1,14 @@
+<div class="tab-buttons-container">
+  @for (tab of tabs(); track tab) {
+    <button (click)="onSelect($index)"
+            role="button"
+            class="tab-button"
+            [class.active]="selectedIndex() == $index">
+      {{ tab.btnLabel() }}
+    </button>
+  } @empty {
+    <div class="no-tab">No tabs available</div>
+  }
+</div>
+
+<ng-content></ng-content>
